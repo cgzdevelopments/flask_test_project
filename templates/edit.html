@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/vendor/vue.global.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Editar estudiante</h1>
+        <form method="POST" action="{{ url_for('update', id=student['id']) }}">
+            <div class="form-group">
+                <label for="full_name">Nombre:</label>
+                <input type="text" class="form-control" id="full_name" name="full_name" required
+                    value="{{student['full_name']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="identification">Identificacion:</label>
+                <input type="text" class="form-control" id="identification" name="identification"
+                    value="{{student['identification']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Edad:</label>
+                <input type="text" class="form-control" id="age" name="age" value="{{student['age']}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Volver al inicio</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

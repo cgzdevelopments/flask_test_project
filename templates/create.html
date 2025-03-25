@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/vendor/vue.global.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Crear estudiante</h1>
+        <form method="POST" action="{{ url_for('store') }}">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Edad:</label>
+                <input type="number" class="form-control" id="age" name="age">
+            </div>
+
+            <div class="form-group">
+                <label for="identification">Identificacion:</label>
+                <input type="text" class="form-control" id="identification" name="identification">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Ir al inicio</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

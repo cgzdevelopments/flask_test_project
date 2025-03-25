@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante N {{ student["id"] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/vendor/vue.global.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Estudiante N {{ student["id"] }}</h1>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Identificación</th>
+                    <th>Edad</th>
+                    <th>Nombre completo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ student["id"] }}</td>
+                    <td>{{ student["identification"] }}</td>
+                    <td>{{ student["age"] }}</td>
+                    <td>{{ student["full_name"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Volver al Inicio</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>
