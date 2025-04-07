@@ -28,5 +28,15 @@ services:
     depends_on:
       - db
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@test.com  # Replace with your email
+      PGADMIN_DEFAULT_PASSWORD: 123456        # Replace with your password
+    ports:
+      - "5001:80"
+    depends_on:
+      - db
+
 volumes:
   pg_data:

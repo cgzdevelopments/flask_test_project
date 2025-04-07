@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Editar estudiante</h1>
-        <form method="POST" action="{{ url_for('update', id=student['id']) }}">
+        <form method="POST" action="{{ url_for('students.update_student', id=student['id']) }}">
             <div class="form-group">
                 <label for="full_name">Nombre:</label>
                 <input type="text" class="form-control" id="full_name" name="full_name" required
